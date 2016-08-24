@@ -1,0 +1,32 @@
+<html>
+<head>
+	<link rel="stylesheet" href="../static/css/styles.css" type="text/css">
+</head>
+<div id="wrapper">
+	<div id="course_table">
+		<h1>Products</h1>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Price</th>
+				<th>Actions</th>
+			</tr>
+			{% for each_product in products %}
+			<tr>
+				<td>{{each_product['name']}}</td>
+				<td>{{each_product['description']}}</td>
+				<td>${{each_product['price']}}</td>
+				<td class="delete">
+					<a href="/show/{{each_product['id']}}">Show</a> |
+					<a href="/edit/{{each_product['id']}}">Edit</a> |
+					<a href="/delete/{{each_product['id']}}"><button>Remove</button></a>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div> <!--End of course_table-->
+	<br>
+	<a href="/add"><button>add a product</button></a>
+</div> <!--End of Wrapper-->
+</html>

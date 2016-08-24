@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit</title>
+</head>
+<body>
+<h1>Edit {{product['name']}}</h1>
+<form action="/process_edit/{{product['id']}}" method="POST">
+	<label>Name: <input type="text" value="{{product['name']}}" name="name"></label> <br>
+	<label>Description: <input type="text" value="{{product['description']}}" name="description"></label> <br>
+	<label>Price: <input type="text" value="{{product['price']}}" name="price"></label> <br>
+	<input type="submit" name="submit"> 
+</form>
+<a href="/">Back</a>
+</body>
+</html>
