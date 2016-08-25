@@ -1,0 +1,61 @@
+<html>
+<head>
+	<link rel="stylesheet" href="../static/css/styles.css" type="text/css">
+</head>
+<body>
+	<div id="wrapper"> <!-- WRAPPER -->
+		<p>The best place to start is the "WelcomeController.py" file in app/controllers.</p>
+		<div class="form"> <!-- FORM -->
+			<form action="/register" method="POST">
+				<h2>REGISTER</h2>
+				<label for="first_name">First Name:</label> <input type="text" name="first_name" id="first_name" value="{{saved_inputs['first_name']}}">
+				<br>
+				<label for="last_name">Last Name:</label> <input type="text" name="last_name" id="last_name" value="{{saved_inputs['last_name']}}">
+				<br>
+				<label for="email">Email:</label> <input type="text" name="email" id="email" value="{{saved_inputs['email']}}">
+				<br>
+				<label for="password">Password:</label> <input type="password" name="password" id="password">
+				<br>
+				<label for="password_confirm">Confirm Password:</label> <input type="password" name="password_confirm" id="password_confirm">
+				<br>
+				<div class="submit">
+					<input type="submit" value="register">
+				</div>
+				{% with errors = get_flashed_messages(category_filter=["regis_messages"]) %}
+				{% if errors %}
+				<div class="alert-message block-message error">
+					<ul>
+						{% for msg in errors %}
+						<li>{{ msg }}</li>
+						{% endfor -%}
+					</ul>
+				</div>
+				{% endif %}
+				{% endwith %}
+			</form>
+
+			<form action="/log_in" method="POST">
+				<h2>LOG IN</h2>
+				<label for="log_in_email">Email:</label> <input type="text" name="log_in_email" id="log_in_email" value="{{saved_inputs['log_in_email']}}">
+				<br>
+				<label for="log_in_password">Password:</label> <input type="password" name="log_in_password" id="log_in_password">
+				<br>
+				<div class="submit">
+					<input type="submit" value="log in">
+				</div>
+				{% with errors = get_flashed_messages(category_filter=["log_in_errors"]) %}
+				{% if errors %}
+				<div class="alert-message block-message error">
+					<ul>
+						{% for msg in errors %}
+						<li>{{ msg }}</li>
+						{% endfor -%}
+					</ul>
+				</div>
+				{% endif %}
+				{% endwith %}
+			</form>
+		</div> <!-- END OF FORM -->
+	</div> <!-- END OF WRAPPER -->
+</body>
+</html>

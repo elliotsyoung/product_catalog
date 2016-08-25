@@ -1,0 +1,33 @@
+* {
+  font-family: monaco;
+}
+
+#wrapper{
+	width: 800px;
+	margin:0px auto;
+}
+
+.form{
+	border: solid gray 1px;
+	padding: 20px;
+	text-align: center;
+}
+	.form label{
+		width: 100%;
+		display: inline-block;
+		text-align: left;
+		margin-top: 10px;
+	}
+	.form form{
+		width: 40%;
+		display: inline-block;
+		vertical-align: top;
+		text-align: left;
+		padding:10px;
+	}	
+	.form form input{
+		width: 100%
+	}
+	.form .submit{
+		margin-top: 10px;
+	}	
